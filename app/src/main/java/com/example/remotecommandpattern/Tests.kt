@@ -21,6 +21,8 @@ fun main() {
     val fanMedium = FanMediumCommand(fan)
     val fanLow = FanLowCommand(fan)
     val fanOff = FanOffCommand(fan)
+    val stereoFanKitchenOn = GroupCommand(stereoOnWithCD, fanLow, kitchenLightOn)
+    val stereoFanKitchenOff = GroupCommand(stereoOff, fanOff, kitchenLightOff)
 
     remote.setCommand(0, kitchenLightOn, kitchenLightOff)
     remote.setCommand(1, wcLightOn, wcLightOff)
@@ -29,6 +31,7 @@ fun main() {
     remote.setCommand(4, fanLow, fanOff)
     remote.setCommand(5, fanMedium, fanOff)
     remote.setCommand(6, fanHigh, fanOff)
+    remote.setCommand(7, stereoFanKitchenOn, stereoFanKitchenOff)
 
     remote.onButtonWasPushed(0)
     remote.offButtonWasPushed(0)
@@ -46,5 +49,9 @@ fun main() {
 
     remote.onButtonWasPushed(5)
     remote.offButtonWasPushed(5)
+    remote.cancelButtonWasPushed()
+
+    remote.onButtonWasPushed(7)
+    remote.offButtonWasPushed(7)
     remote.cancelButtonWasPushed()
 }
