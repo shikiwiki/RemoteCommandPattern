@@ -24,11 +24,15 @@ fun main() {
 
     remote.onButtonWasPushed(0)
     remote.offButtonWasPushed(0)
+    remote.cancelButtonWasPushed()
+
     remote.onButtonWasPushed(1)
     remote.offButtonWasPushed(1)
+
     remote.onButtonWasPushed(2)
     remote.offButtonWasPushed(2)
-    remote.onButtonWasPushed(3)
-    remote.offButtonWasPushed(3)
 
+    remote.onButtonWasPushed(3)
+    remote.cancelButtonWasPushed()
+    remote.offButtonWasPushed(3)
 }
